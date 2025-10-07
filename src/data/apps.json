@@ -1,0 +1,200 @@
+[
+  {
+    "image": "/assets/demo-app (1).webp",
+    "title": "Hero Notes",
+    "companyName": "Hero Labs",
+    "id": 1,
+    "description": "Fast and simple note-taking app with cloud sync and tags.",
+    "size": 24.5,
+    "reviews": 1245,
+    "ratingAvg": 4.6,
+    "downloads": 125000,
+    "ratings": [
+      { "name": "1 star", "count": 45 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 750 }
+    ]
+  },
+  {
+    "image": "/assets/demo-app (2).webp",
+    "title": "FitTrack",
+    "companyName": "HealthWave",
+    "id": 2,
+    "description": "Track workouts, calories and progress with smart charts.",
+    "size": 36.1,
+    "reviews": 985,
+    "ratingAvg": 4.4,
+    "downloads": 98000,
+    "ratings": [
+      { "name": "1 star", "count": 55 },
+      { "name": "2 star", "count": 65 },
+      { "name": "3 star", "count": 160 },
+      { "name": "4 star", "count": 250 },
+      { "name": "5 star", "count": 455 }
+    ]
+  },
+  {
+    "image": "/assets/demo-app (3).webp",
+    "title": "PhotoSnap",
+    "companyName": "PixelForge",
+    "id": 3,
+    "description": "Lightweight photo editor and collage maker.",
+    "size": 48.0,
+    "reviews": 432,
+    "ratingAvg": 4.1,
+    "downloads": 42000,
+    "ratings": [
+      { "name": "1 star", "count": 18 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 60 },
+      { "name": "4 star", "count": 150 },
+      { "name": "5 star", "count": 179 }
+    ]
+  },
+  {
+    "image": "/assets/demo-app (4).webp",
+    "title": "Budget Buddy",
+    "companyName": "MoneyWise",
+    "id": 4,
+    "description": "Simple budgeting with categories and monthly reports.",
+    "size": 19.8,
+    "reviews": 754,
+    "ratingAvg": 4.5,
+    "downloads": 76000,
+    "ratings": [
+      { "name": "1 star", "count": 35 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 80 },
+      { "name": "4 star", "count": 220 },
+      { "name": "5 star", "count": 399 }
+    ]
+  },
+  {
+    "image": "/assets/demo-app (5).webp",
+    "title": "Daily Recipes",
+    "companyName": "KitchenPro",
+    "id": 5,
+    "description": "Discover recipes, save favorites, and create shopping lists.",
+    "size": 29.2,
+    "reviews": 210,
+    "ratingAvg": 4.0,
+    "downloads": 24000,
+    "ratings": [
+      { "name": "1 star", "count": 10 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 45 },
+      { "name": "4 star", "count": 70 },
+      { "name": "5 star", "count": 70 }
+    ]
+  },
+  {
+    "image": "/assets/demo-app (6).webp",
+    "title": "Travel Atlas",
+    "companyName": "WanderCo",
+    "id": 6,
+    "description": "Plan trips, offline maps and itineraries.",
+    "size": 52.0,
+    "reviews": 1348,
+    "ratingAvg": 4.7,
+    "downloads": 160000,
+    "ratings": [
+      { "name": "1 star", "count": 22 },
+      { "name": "2 star", "count": 18 },
+      { "name": "3 star", "count": 88 },
+      { "name": "4 star", "count": 420 },
+      { "name": "5 star", "count": 800 }
+    ]
+  },
+  {
+    "image": "/assets/App-Error.png",
+    "title": "StudyBuddy",
+    "companyName": "EduSpark",
+    "id": 7,
+    "description": "Flashcards, quizzes and spaced repetition for students.",
+    "size": 22.5,
+    "reviews": 640,
+    "ratingAvg": 4.3,
+    "downloads": 68000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 200 },
+      { "name": "5 star", "count": 280 }
+    ]
+  },
+  {
+    "image": "/assets/error-404.png",
+    "title": "Weatherly",
+    "companyName": "SkyNetics",
+    "id": 8,
+    "description": "Local weather, widgets, and hourly forecast.",
+    "size": 15.6,
+    "reviews": 312,
+    "ratingAvg": 4.2,
+    "downloads": 36000,
+    "ratings": [
+      { "name": "1 star", "count": 12 },
+      { "name": "2 star", "count": 10 },
+      { "name": "3 star", "count": 40 },
+      { "name": "4 star", "count": 90 },
+      { "name": "5 star", "count": 160 }
+    ]
+  },
+  {
+    "image": "/assets/icon-downloads.png",
+    "title": "TaskFlow",
+    "companyName": "FlowWorks",
+    "id": 9,
+    "description": "Kanban style task manager with reminders.",
+    "size": 28.7,
+    "reviews": 512,
+    "ratingAvg": 4.3,
+    "downloads": 52000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 28 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 185 },
+      { "name": "5 star", "count": 174 }
+    ]
+  },
+  {
+    "image": "/assets/icon-ratings.png",
+    "title": "Language Lab",
+    "companyName": "LinguaTech",
+    "id": 10,
+    "description": "Mini lessons, games and daily practice for languages.",
+    "size": 44.0,
+    "reviews": 890,
+    "ratingAvg": 4.5,
+    "downloads": 94000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 380 }
+    ]
+  },
+  {
+    "image": "/assets/icon-review.png",
+    "title": "Mini Market",
+    "companyName": "ShopEase",
+    "id": 12,
+    "description": "Local grocery ordering and quick delivery.",
+    "size": 31.7,
+    "reviews": 1560,
+    "ratingAvg": 4.8,
+    "downloads": 240000,
+    "ratings": [
+      { "name": "1 star", "count": 33 },
+      { "name": "2 star", "count": 29 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 878 }
+    ]
+  }
+]

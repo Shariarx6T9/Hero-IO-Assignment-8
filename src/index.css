@@ -1,0 +1,161 @@
+:root {
+  --primary: #0b61ff;
+  --muted: #6b7280;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --radius: 16px;
+  --gap: 20px;
+  --shadow: 0 6px 18px rgba(3, 9, 23, 0.08);
+  --soft-shadow: 0 2px 8px rgba(3,9,23,0.04);
+}
+
+/* Reset + base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Layout container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 0 rgba(10, 15, 30, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+.header .left { display: flex; gap: 16px; align-items:center; }
+.logo { display:flex; gap:12px; align-items:center; cursor:pointer; }
+.logo img { height:44px; width:auto; display:block; }
+.logo .brand { line-height:1; }
+.logo .brand .name { font-weight:700; font-size:18px; color:var(--primary); }
+.logo .brand .sub { font-size:12px; color:var(--muted); }
+
+/* Nav */
+.nav { display:flex; gap:10px; align-items:center; margin-left:12px; }
+.nav a { padding:8px 12px; border-radius:10px; color:var(--muted); font-weight:500; transition: all .15s ease; }
+.nav a:hover { background: rgba(11,97,255,0.06); color:var(--primary); }
+.nav a.active { background: rgba(11,97,255,0.12); color:var(--primary); font-weight:600; }
+
+/* Buttons */
+.btn {
+  display:inline-block;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #e6e9ef;
+}
+
+/* Banner / Hero */
+.banner {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 24px 0;
+  box-shadow: var(--soft-shadow);
+  min-height: 260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color: white;
+  background: center/cover no-repeat;
+}
+.banner::after {
+  content: "";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(3,9,23,0.18), rgba(3,9,23,0.45));
+}
+.banner .inner { position: relative; z-index: 2; max-width: 760px; padding: 28px; }
+.banner h1 { font-size: 36px; line-height:1.05; margin-bottom: 12px; font-weight:700; }
+.banner p { margin-bottom: 18px; color: rgba(255,255,255,0.92); font-size:15px; }
+
+/* State cards */
+.states { display:flex; gap:16px; margin:12px 0 28px; flex-wrap:wrap; }
+.state-card {
+  flex:1; min-width:160px; padding:18px; border-radius:12px; color:#fff; box-shadow: var(--soft-shadow);
+}
+.state-card h4 { margin-bottom:8px; font-size:16px; }
+.state-card.small { font-size:13px; color:rgba(255,255,255,0.92); }
+
+/* Grid */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+
+/* App Card (main) */
+.app-card {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--soft-shadow);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.app-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.app-card img { width:64px; height:64px; border-radius:12px; object-fit:cover; flex-shrink:0; }
+.app-card .meta { flex:1; }
+.app-card .meta h4 { font-size:16px; margin-bottom:6px; font-weight:600; }
+.app-card .meta p { margin:0; font-size:13px; color:var(--muted); }
+
+/* right meta column */
+.app-card .right { text-align:right; font-size:13px; color:var(--muted); min-width:90px; }
+
+/* App Details page helpers */
+.details-grid { display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start; }
+
+/* Reviews card */
+.reviews-card { background:var(--card); padding:14px; border-radius:12px; box-shadow: var(--soft-shadow); }
+
+/* Footer */
+.footer {
+  margin-top: 48px;
+  background: #fff;
+  border-top: 1px solid #eef2f7;
+  padding: 28px 20px;
+}
+.footer .row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.footer .small { color:var(--muted); font-size:13px; }
+
+/* Utils */
+.center { display:flex; align-items:center; justify-content:center; }
+.small { font-size:13px; color:var(--muted); }
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .banner h1 { font-size:28px; }
+  .details-grid { grid-template-columns: 1fr; }
+  .app-card { align-items:flex-start; }
+  .app-card .right { text-align:left; }
+}
+@media (max-width: 480px) {
+  .logo img { height:36px; }
+  .banner { min-height:200px; }
+}
