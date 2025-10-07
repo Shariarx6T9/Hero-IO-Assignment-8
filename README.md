@@ -9,9 +9,3 @@ Features:
 - Recharts review chart on App Details
 - SPA routing with Netlify redirects
 
-## Setup
-
-1. Copy your image files into `public/assets/` (see earlier list).
-2. Install:
-```bash
-npm install
