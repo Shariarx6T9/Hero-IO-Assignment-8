@@ -1,200 +1,326 @@
 [
   {
-    "image": "/assets/demo-app (1).webp",
-    "title": "Hero Notes",
-    "companyName": "Hero Labs",
     "id": 1,
-    "description": "Fast and simple note-taking app with cloud sync and tags.",
-    "size": 24.5,
-    "reviews": 1245,
-    "ratingAvg": 4.6,
-    "downloads": 125000,
-    "ratings": [
-      { "name": "1 star", "count": 45 },
-      { "name": "2 star", "count": 30 },
-      { "name": "3 star", "count": 120 },
-      { "name": "4 star", "count": 300 },
-      { "name": "5 star", "count": 750 }
-    ]
-  },
-  {
-    "image": "/assets/demo-app (2).webp",
-    "title": "FitTrack",
-    "companyName": "HealthWave",
-    "id": 2,
-    "description": "Track workouts, calories and progress with smart charts.",
-    "size": 36.1,
-    "reviews": 985,
-    "ratingAvg": 4.4,
-    "downloads": 98000,
-    "ratings": [
-      { "name": "1 star", "count": 55 },
-      { "name": "2 star", "count": 65 },
-      { "name": "3 star", "count": 160 },
-      { "name": "4 star", "count": 250 },
-      { "name": "5 star", "count": 455 }
-    ]
-  },
-  {
-    "image": "/assets/demo-app (3).webp",
-    "title": "PhotoSnap",
-    "companyName": "PixelForge",
-    "id": 3,
-    "description": "Lightweight photo editor and collage maker.",
-    "size": 48.0,
-    "reviews": 432,
-    "ratingAvg": 4.1,
-    "downloads": 42000,
-    "ratings": [
-      { "name": "1 star", "count": 18 },
-      { "name": "2 star", "count": 25 },
-      { "name": "3 star", "count": 60 },
-      { "name": "4 star", "count": 150 },
-      { "name": "5 star", "count": 179 }
-    ]
-  },
-  {
-    "image": "/assets/demo-app (4).webp",
-    "title": "Budget Buddy",
-    "companyName": "MoneyWise",
-    "id": 4,
-    "description": "Simple budgeting with categories and monthly reports.",
-    "size": 19.8,
-    "reviews": 754,
-    "ratingAvg": 4.5,
-    "downloads": 76000,
-    "ratings": [
-      { "name": "1 star", "count": 35 },
-      { "name": "2 star", "count": 20 },
-      { "name": "3 star", "count": 80 },
-      { "name": "4 star", "count": 220 },
-      { "name": "5 star", "count": 399 }
-    ]
-  },
-  {
-    "image": "/assets/demo-app (5).webp",
-    "title": "Daily Recipes",
-    "companyName": "KitchenPro",
-    "id": 5,
-    "description": "Discover recipes, save favorites, and create shopping lists.",
-    "size": 29.2,
-    "reviews": 210,
-    "ratingAvg": 4.0,
-    "downloads": 24000,
-    "ratings": [
-      { "name": "1 star", "count": 10 },
-      { "name": "2 star", "count": 15 },
-      { "name": "3 star", "count": 45 },
-      { "name": "4 star", "count": 70 },
-      { "name": "5 star", "count": 70 }
-    ]
-  },
-  {
-    "image": "/assets/demo-app (6).webp",
-    "title": "Travel Atlas",
-    "companyName": "WanderCo",
-    "id": 6,
-    "description": "Plan trips, offline maps and itineraries.",
-    "size": 52.0,
-    "reviews": 1348,
-    "ratingAvg": 4.7,
-    "downloads": 160000,
-    "ratings": [
-      { "name": "1 star", "count": 22 },
-      { "name": "2 star", "count": 18 },
-      { "name": "3 star", "count": 88 },
-      { "name": "4 star", "count": 420 },
-      { "name": "5 star", "count": 800 }
-    ]
-  },
-  {
-    "image": "/assets/App-Error.png",
-    "title": "StudyBuddy",
-    "companyName": "EduSpark",
-    "id": 7,
-    "description": "Flashcards, quizzes and spaced repetition for students.",
-    "size": 22.5,
-    "reviews": 640,
-    "ratingAvg": 4.3,
-    "downloads": 68000,
-    "ratings": [
-      { "name": "1 star", "count": 30 },
-      { "name": "2 star", "count": 30 },
-      { "name": "3 star", "count": 100 },
-      { "name": "4 star", "count": 200 },
-      { "name": "5 star", "count": 280 }
-    ]
-  },
-  {
-    "image": "/assets/error-404.png",
-    "title": "Weatherly",
-    "companyName": "SkyNetics",
-    "id": 8,
-    "description": "Local weather, widgets, and hourly forecast.",
-    "size": 15.6,
-    "reviews": 312,
-    "ratingAvg": 4.2,
-    "downloads": 36000,
-    "ratings": [
-      { "name": "1 star", "count": 12 },
-      { "name": "2 star", "count": 10 },
-      { "name": "3 star", "count": 40 },
-      { "name": "4 star", "count": 90 },
-      { "name": "5 star", "count": 160 }
-    ]
-  },
-  {
-    "image": "/assets/icon-downloads.png",
-    "title": "TaskFlow",
-    "companyName": "FlowWorks",
-    "id": 9,
-    "description": "Kanban style task manager with reminders.",
-    "size": 28.7,
-    "reviews": 512,
-    "ratingAvg": 4.3,
-    "downloads": 52000,
-    "ratings": [
-      { "name": "1 star", "count": 25 },
-      { "name": "2 star", "count": 28 },
-      { "name": "3 star", "count": 100 },
-      { "name": "4 star", "count": 185 },
-      { "name": "5 star", "count": 174 }
-    ]
-  },
-  {
-    "image": "/assets/icon-ratings.png",
-    "title": "Language Lab",
-    "companyName": "LinguaTech",
-    "id": 10,
-    "description": "Mini lessons, games and daily practice for languages.",
-    "size": 44.0,
-    "reviews": 890,
-    "ratingAvg": 4.5,
-    "downloads": 94000,
-    "ratings": [
-      { "name": "1 star", "count": 40 },
-      { "name": "2 star", "count": 50 },
-      { "name": "3 star", "count": 120 },
-      { "name": "4 star", "count": 300 },
-      { "name": "5 star", "count": 380 }
-    ]
-  },
-  {
-    "image": "/assets/icon-review.png",
-    "title": "Mini Market",
-    "companyName": "ShopEase",
-    "id": 12,
-    "description": "Local grocery ordering and quick delivery.",
-    "size": 31.7,
-    "reviews": 1560,
+    "title": "Canva",
+    "companyName": "Canva Pty Ltd",
+    "image": "/assets/apps/Canva logo.jpg",
+    "description": "Design graphics, presentations, and social media posts easily.",
+    "size": 110.0,
+    "reviews": 2200000,
     "ratingAvg": 4.8,
-    "downloads": 240000,
+    "downloads": 600000000,
     "ratings": [
-      { "name": "1 star", "count": 33 },
-      { "name": "2 star", "count": 29 },
-      { "name": "3 star", "count": 120 },
-      { "name": "4 star", "count": 500 },
-      { "name": "5 star", "count": 878 }
+      {"name": "1 star", "count": 20000},
+      {"name": "2 star", "count": 25000},
+      {"name": "3 star", "count": 60000},
+      {"name": "4 star", "count": 300000},
+      {"name": "5 star", "count": 1800000}
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Dropbox",
+    "companyName": "Dropbox, Inc.",
+    "image": "/assets/apps/Dropbox logo.jpg",
+    "description": "File hosting and cloud storage service.",
+    "size": 80.0,
+    "reviews": 1000000,
+    "ratingAvg": 4.3,
+    "downloads": 500000000,
+    "ratings": [
+      {"name": "1 star", "count": 8000},
+      {"name": "2 star", "count": 12000},
+      {"name": "3 star", "count": 40000},
+      {"name": "4 star", "count": 200000},
+      {"name": "5 star", "count": 740000}
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Evernote",
+    "companyName": "Evernote Corporation",
+    "image": "/assets/apps/evernote logo.jpg",
+    "description": "Note taking and organization app.",
+    "size": 60.0,
+    "reviews": 900000,
+    "ratingAvg": 4.5,
+    "downloads": 400000000,
+    "ratings": [
+      {"name": "1 star", "count": 8000},
+      {"name": "2 star", "count": 10000},
+      {"name": "3 star", "count": 30000},
+      {"name": "4 star", "count": 200000},
+      {"name": "5 star", "count": 640000}
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Facebook",
+    "companyName": "Meta Platforms",
+    "image": "/assets/apps/facebook logo.jpg",
+    "description": "Social networking platform to connect with friends and family.",
+    "size": 105.0,
+    "reviews": 3000000,
+    "ratingAvg": 4.3,
+    "downloads": 2000000000,
+    "ratings": [
+      {"name": "1 star", "count": 20000},
+      {"name": "2 star", "count": 25000},
+      {"name": "3 star", "count": 50000},
+      {"name": "4 star", "count": 350000},
+      {"name": "5 star", "count": 2300000}
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Gmail",
+    "companyName": "Google",
+    "image": "/assets/apps/gmail logo.jpg",
+    "description": "Email service with spam protection and Google integration.",
+    "size": 70.0,
+    "reviews": 4000000,
+    "ratingAvg": 4.6,
+    "downloads": 1500000000,
+    "ratings": [
+      {"name": "1 star", "count": 20000},
+      {"name": "2 star", "count": 30000},
+      {"name": "3 star", "count": 80000},
+      {"name": "4 star", "count": 700000},
+      {"name": "5 star", "count": 3200000}
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Google Chrome",
+    "companyName": "Google",
+    "image": "/assets/apps/google chrome logo.jpg",
+    "description": "Fast, secure, and free web browser.",
+    "size": 72.0,
+    "reviews": 5000000,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      {"name": "1 star", "count": 45000},
+      {"name": "2 star", "count": 20000},
+      {"name": "3 star", "count": 100000},
+      {"name": "4 star", "count": 1000000},
+      {"name": "5 star", "count": 3900000}
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Instagram",
+    "companyName": "Meta Platforms",
+    "image": "/assets/apps/instagram logo.jpg",
+    "description": "Photo and video sharing social networking service.",
+    "size": 100.0,
+    "reviews": 4000000,
+    "ratingAvg": 4.5,
+    "downloads": 1000000000,
+    "ratings": [
+      {"name": "1 star", "count": 30000},
+      {"name": "2 star", "count": 40000},
+      {"name": "3 star", "count": 100000},
+      {"name": "4 star", "count": 900000},
+      {"name": "5 star", "count": 2900000}
+    ]
+  },
+  {
+    "id": 8,
+    "title": "LinkedIn",
+    "companyName": "Microsoft",
+    "image": "/assets/apps/linkdin logo.jpg",
+    "description": "Professional networking and job searching platform.",
+    "size": 90.0,
+    "reviews": 1500000,
+    "ratingAvg": 4.5,
+    "downloads": 700000000,
+    "ratings": [
+      {"name": "1 star", "count": 12000},
+      {"name": "2 star", "count": 18000},
+      {"name": "3 star", "count": 50000},
+      {"name": "4 star", "count": 250000},
+      {"name": "5 star", "count": 1400000}
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Microsoft Teams",
+    "companyName": "Microsoft",
+    "image": "/assets/apps/microsoft team logo.jpg",
+    "description": "Collaboration and communication platform for teams.",
+    "size": 120.0,
+    "reviews": 2000000,
+    "ratingAvg": 4.5,
+    "downloads": 500000000,
+    "ratings": [
+      {"name": "1 star", "count": 12000},
+      {"name": "2 star", "count": 15000},
+      {"name": "3 star", "count": 50000},
+      {"name": "4 star", "count": 200000},
+      {"name": "5 star", "count": 1650000}
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Notion",
+    "companyName": "Notion Labs",
+    "image": "/assets/apps/Notion Logo.jpg",
+    "description": "All-in-one workspace for notes, tasks, wikis, and databases.",
+    "size": 95.0,
+    "reviews": 1800000,
+    "ratingAvg": 4.7,
+    "downloads": 400000000,
+    "ratings": [
+      {"name": "1 star", "count": 12000},
+      {"name": "2 star", "count": 18000},
+      {"name": "3 star", "count": 50000},
+      {"name": "4 star", "count": 250000},
+      {"name": "5 star", "count": 1400000}
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Pinterest",
+    "companyName": "Pinterest, Inc.",
+    "image": "/assets/apps/pinterest logo.jpg",
+    "description": "Discover and save creative ideas.",
+    "size": 80.0,
+    "reviews": 900000,
+    "ratingAvg": 4.3,
+    "downloads": 400000000,
+    "ratings": [
+      {"name": "1 star", "count": 8000},
+      {"name": "2 star", "count": 12000},
+      {"name": "3 star", "count": 30000},
+      {"name": "4 star", "count": 200000},
+      {"name": "5 star", "count": 640000}
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Slack",
+    "companyName": "Slack Technologies",
+    "image": "/assets/apps/slack logo.jpg",
+    "description": "Team collaboration and messaging platform.",
+    "size": 120.0,
+    "reviews": 1200000,
+    "ratingAvg": 4.5,
+    "downloads": 300000000,
+    "ratings": [
+      {"name": "1 star", "count": 10000},
+      {"name": "2 star", "count": 20000},
+      {"name": "3 star", "count": 50000},
+      {"name": "4 star", "count": 250000},
+      {"name": "5 star", "count": 930000}
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Spotify",
+    "companyName": "Spotify Technology",
+    "image": "/assets/apps/spotify logo.jpg",
+    "description": "Music streaming service.",
+    "size": 200.0,
+    "reviews": 7000000,
+    "ratingAvg": 4.8,
+    "downloads": 1000000000,
+    "ratings": [
+      {"name": "1 star", "count": 60000},
+      {"name": "2 star", "count": 50000},
+      {"name": "3 star", "count": 200000},
+      {"name": "4 star", "count": 1200000},
+      {"name": "5 star", "count": 5600000}
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Telegram",
+    "companyName": "Telegram Messenger LLP",
+    "image": "/assets/apps/telegram logo.jpg",
+    "description": "Cloud-based instant messaging, VoIP, and video telephony.",
+    "size": 50.0,
+    "reviews": 3000000,
+    "ratingAvg": 4.4,
+    "downloads": 500000000,
+    "ratings": [
+      {"name": "1 star", "count": 20000},
+      {"name": "2 star", "count": 30000},
+      {"name": "3 star", "count": 100000},
+      {"name": "4 star", "count": 500000},
+      {"name": "5 star", "count": 2400000}
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Todoist",
+    "companyName": "Doist",
+    "image": "/assets/apps/todolist logo.jpg",
+    "description": "Task manager for personal and team productivity.",
+    "size": 45.0,
+    "reviews": 1200000,
+    "ratingAvg": 4.6,
+    "downloads": 350000000,
+    "ratings": [
+      {"name": "1 star", "count": 9000},
+      {"name": "2 star", "count": 12000},
+      {"name": "3 star", "count": 40000},
+      {"name": "4 star", "count": 220000},
+      {"name": "5 star", "count": 1100000}
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Twitter",
+    "companyName": "Twitter, Inc.",
+    "image": "/assets/apps/twitter logo.jpg",
+    "description": "Social networking and microblogging service.",
+    "size": 85.0,
+    "reviews": 1800000,
+    "ratingAvg": 4.4,
+    "downloads": 800000000,
+    "ratings": [
+      {"name": "1 star", "count": 10000},
+      {"name": "2 star", "count": 12000},
+      {"name": "3 star", "count": 40000},
+      {"name": "4 star", "count": 250000},
+      {"name": "5 star", "count": 1400000}
+    ]
+  },
+  {
+    "id": 17,
+    "title": "WhatsApp",
+    "companyName": "Meta Platforms",
+    "image": "/assets/apps/whatsapp logo.jpg",
+    "description": "Free messaging and video calling app.",
+    "size": 150.0,
+    "reviews": 6000000,
+    "ratingAvg": 4.6,
+    "downloads": 1000000000,
+    "ratings": [
+      {"name": "1 star", "count": 50000},
+      {"name": "2 star", "count": 40000},
+      {"name": "3 star", "count": 200000},
+      {"name": "4 star", "count": 1100000},
+      {"name": "5 star", "count": 5300000}
+    ]
+  },
+  {
+    "id": 18,
+    "title": "YouTube",
+    "companyName": "Google",
+    "image": "/assets/apps/youtube logo.jpg",
+    "description": "Video sharing and streaming platform.",
+    "size": 150.0,
+    "reviews": 6000000,
+    "ratingAvg": 4.7,
+    "downloads": 2000000000,
+    "ratings": [
+      {"name": "1 star", "count": 50000},
+      {"name": "2 star", "count": 40000},
+      {"name": "3 star", "count": 200000},
+      {"name": "4 star", "count": 1100000},
+      {"name": "5 star", "count": 5300000}
     ]
   }
 ]
