@@ -19,21 +19,21 @@ export default function App() {
       <Header />
 
       {/* ✅ Main content area */}
-      <main style={{ minHeight: "72vh", padding: "20px 0" }}>
+      <main className="min-h-[72vh] py-6">
         <Routes>
           {/* Home Page */}
           <Route path="/" element={<Home />} />
 
-          {/* All Apps Page (includes search + app list) */}
+          {/* All Apps Page */}
           <Route path="/apps" element={<AllApps />} />
 
-          {/* App Details Page (individual app info) */}
+          {/* Individual App Details Page */}
           <Route path="/apps/:id" element={<AppDetails />} />
 
-          {/* My Installation Page */}
-          <Route path="/my-installation" element={<MyInstallation />} />
+          {/* My Installed Apps */}
+          <Route path="/installation" element={<MyInstallation />} />
 
-          {/* ✅ Fallback for any unknown route */}
+          {/* Fallback / 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
