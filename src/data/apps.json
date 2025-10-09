@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Canva",
     "companyName": "Canva Pty Ltd",
-    "image": "/assets/apps/Canva logo.jpg",
+    "image": "assets\\apps\\canva-icon.png",
     "description": "Canva is more than just a design tool—it’s a complete creative platform that empowers anyone to turn ideas into beautiful visuals. With an intuitive drag-and-drop interface, users can craft stunning presentations, social media graphics, posters, logos, and more without any prior design experience. The app includes thousands of customizable templates, fonts, and stock images that make it easy to maintain a professional look across projects. Canva also supports real-time collaboration, allowing teams to edit designs together, leave comments, and share feedback seamlessly. Its minimalist layout and guided tools help reduce complexity so creators can focus purely on their message. Whether you’re designing for business, school, or personal projects, Canva simplifies visual creation and helps you communicate effectively through design. Integrated cloud storage ensures your projects are always accessible, making Canva the ultimate solution for effortless creativity anytime, anywhere.",
     "size": 110.0,
     "reviews": 2200000,
