@@ -159,3 +159,136 @@ a { color: inherit; text-decoration: none; }
   .logo img { height:36px; }
   .banner { min-height:200px; }
 }
+:root {
+  --primary: #6d28d9; /* A deep purple matching the Figma button */
+  --primary-hover: #5b21b6;
+  --muted: #6b7280;
+  --bg: #f3f4f6; /* A light gray background */
+  --card-bg: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --text-dark: #1f2937;
+  --text-light: #4b5563;
+}
+
+/* Base Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header & Footer (Assuming components don't use Tailwind) */
+.header {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.footer {
+  background-color: #111827; /* Dark footer */
+  color: #d1d5db;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+
+/* App Card Component */
+.app-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.app-card-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: #f3f4f6;
+}
+
+.app-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.app-card-details {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-card-install-btn {
+  margin-top: auto;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-card-install-btn.install {
+  background-color: #10b981; /* Green */
+  color: white;
+}
+.app-card-install-btn.install:hover {
+  background-color: #059669;
+}
+
+.app-card-install-btn.installed {
+  background-color: #e5e7eb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* General Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}

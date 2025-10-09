@@ -1,76 +1,56 @@
-// src/components/AppCard.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { FaDownload, FaStar } from 'react-icons/fa';
 import { installApp, uninstallApp, isInstalled } from "../utils/localStorage";
-import toast from "react-hot-toast";
 
 export default function AppCard({ app }) {
   const navigate = useNavigate();
   const [installed, setInstalled] = useState(isInstalled(app.id));
 
+  // Listen for storage changes to update UI across tabs/components
   useEffect(() => {
-    const onStorage = () => setInstalled(isInstalled(app.id));
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+    const handleStorageChange = () => {
+      setInstalled(isInstalled(app.id));
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, [app.id]);
 
   const handleInstallClick = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevent navigating to details page when clicking the button
+    
     if (installed) {
       uninstallApp(app.id);
-      toast(`${app.title} uninstalled`);
+      toast.error(`${app.title} uninstalled`);
     } else {
       installApp(app.id);
-      toast(`${app.title} installed`);
+      toast.success(`${app.title} installed`);
     }
-    setInstalled(!installed);
+    // Manually trigger a storage event to notify other components
+    window.dispatchEvent(new Event('storage'));
   };
 
   return (
     <div
       onClick={() => navigate(`/apps/${app.id}`)}
-      style={{
-        cursor: "pointer",
-        background: "#fff",
-        borderRadius: 12,
-        padding: 12,
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-        transition: "transform 0.2s ease",
-      }}
       className="app-card"
     >
       <img
-        src={app.image.startsWith("/assets") ? app.image : `/assets/${app.image}`}
+        src={app.image}
         alt={app.title}
-        style={{
-          width: "100%",
-          height: 150,
-          objectFit: "cover",
-          borderRadius: 12,
-        }}
-        onError={(e) => (e.target.src = "/assets/placeholder.png")}
+        className="app-card-image"
       />
-      <div style={{ fontWeight: 700, fontSize: 16 }}>{app.title}</div>
-      <div className="small" style={{ color: "#666" }}>
-        {app.companyName} • {app.size} MB
-      </div>
-      <div className="small" style={{ color: "#666" }}>
-        Downloads: {app.downloads.toLocaleString()} • {app.ratingAvg}★ ({app.reviews} reviews)
+      <div className="app-card-title">{app.title}</div>
+      <div className="app-card-details">
+        <span className="flex items-center gap-1"><FaDownload /> {(app.downloads / 1000000).toFixed(1)}M</span>
+        <span>•</span>
+        <span className="flex items-center gap-1 text-yellow-500"><FaStar /> {app.ratingAvg}</span>
       </div>
       <button
         onClick={handleInstallClick}
-        style={{
-          marginTop: "auto",
-          padding: "6px 12px",
-          borderRadius: 8,
-          border: "none",
-          background: installed ? "#ccc" : "#4CAF50",
-          color: installed ? "#333" : "#fff",
-          cursor: "pointer",
-        }}
+        className={`app-card-install-btn ${installed ? 'installed' : 'install'}`}
+        disabled={installed}
       >
         {installed ? "Installed" : "Install"}
       </button>

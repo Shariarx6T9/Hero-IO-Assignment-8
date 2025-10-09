@@ -5,11 +5,13 @@ export default function NotFound() {
   return (
     <div
       style={{
-        padding: "60px 20px",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
+        padding: "20px",
       }}
     >
       <img
@@ -31,6 +33,7 @@ export default function NotFound() {
           padding: "10px 18px",
           borderRadius: "8px",
           textDecoration: "none",
+          fontWeight: "500",
         }}
       >
         Go Home

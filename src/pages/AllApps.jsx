@@ -1,90 +1,99 @@
-// src/pages/AllApps.jsx
 import React, { useState, useEffect } from "react";
 import appsData from "../data/apps.json";
 import AppCard from "../components/AppCard";
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
-import NotFound from "./NotFound";
+import { Link } from "react-router-dom";
 
 export default function AllApps() {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState(appsData);
-  const [loading, setLoading] = useState(false);
-  const [sort, setSort] = useState("none");
+  const [sortOrder, setSortOrder] = useState("downloads-desc");
+  const [filteredApps, setFilteredApps] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    const t = setTimeout(() => {
-      let filtered = appsData;
+    const debounce = setTimeout(() => {
+      let apps = [...appsData];
 
-      if (query.trim() !== "") {
-        const q = query.trim().toLowerCase();
-        filtered = appsData.filter((a) => a.title.toLowerCase().includes(q));
+      // Filter by search query (case-insensitive)
+      if (query) {
+        apps = apps.filter((app) =>
+          app.title.toLowerCase().includes(query.toLowerCase())
+        );
       }
 
-      if (sort === "high-low") {
-        filtered = filtered.slice().sort((a, b) => b.downloads - a.downloads);
-      } else if (sort === "low-high") {
-        filtered = filtered.slice().sort((a, b) => a.downloads - b.downloads);
+      // Sort apps
+      if (sortOrder === "downloads-desc") {
+        apps.sort((a, b) => b.downloads - a.downloads);
+      } else if (sortOrder === "downloads-asc") {
+        apps.sort((a, b) => a.downloads - b.downloads);
       }
 
-      setResults(filtered);
+      setFilteredApps(apps);
       setLoading(false);
-    }, 200);
+    }, 300);
 
-    return () => clearTimeout(t);
-  }, [query, sort]);
+    return () => clearTimeout(debounce);
+  }, [query, sortOrder]);
 
   return (
-    <div className="container" style={{ padding: "40px 20px" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 16,
-        }}
-      >
-        <div>
-          <h2>All Apps</h2>
-          <div style={{ color: "#666", fontSize: 14 }}>{results.length} apps</div>
-        </div>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+    <div className="container mx-auto px-6 py-10">
+      {/* Header Text */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold">Our All Applications</h1>
+        <p className="text-gray-600 mt-2">
+          Explore All Apps on the Market developed by us. We code for Millions.
+        </p>
+      </div>
+
+      {/* Search and Sort */}
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <p className="font-semibold text-gray-700">
+          {filteredApps.length} Apps Found
+        </p>
+        <div className="flex items-center gap-4">
           <SearchBar value={query} onChange={setQuery} />
           <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value)}
-            style={{
-              padding: 10,
-              borderRadius: 10,
-              border: "1px solid #e6e9ef",
-            }}
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            className="p-2 border border-gray-300 rounded-md"
           >
-            <option value="none">Sort</option>
-            <option value="high-low">High → Low downloads</option>
-            <option value="low-high">Low → High downloads</option>
+            <option value="downloads-desc">Downloads: High-Low</option>
+            <option value="downloads-asc">Downloads: Low-High</option>
           </select>
         </div>
       </div>
 
+      {/* Content */}
       {loading ? (
         <LoadingSpinner />
-      ) : results.length === 0 ? (
-        <NotFound
-          text="The App you are requesting is not found on our system. Please try another app."
-          img="/assets/App-Error.png"
-        />
-      ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-            gap: 16,
-          }}
-        >
-          {results.map((a) => (
-            <AppCard key={a.id} app={a} />
+      ) : filteredApps.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredApps.map((app) => (
+            <AppCard key={app.id} app={app} />
           ))}
+        </div>
+      ) : (
+        // ✅ Centered Not Found Section
+        <div className="flex flex-col items-center justify-center text-center py-24">
+          <img
+            src="/assets/App-Error.png"
+            alt="No apps found"
+            className="mx-auto w-64 mb-6"
+          />
+          <h2 className="text-xl font-semibold mb-2">
+            The App you are requesting is not found on our system.
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Please try searching for another app.
+          </p>
+          <Link
+            to="/"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium transition"
+          >
+            Go Home
+          </Link>
         </div>
       )}
     </div>

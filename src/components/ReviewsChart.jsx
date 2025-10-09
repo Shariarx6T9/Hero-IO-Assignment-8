@@ -15,7 +15,7 @@ export default function ReviewsChart({ ratings }) {
       star: r.name.split(" ")[0],
       count: r.count,
     }))
-    .sort((a, b) => b.star - a.star);
+    .sort((a, b) => Number(b.star) - Number(a.star)); // fix string-to-number
 
   const colors = ["#FFD166", "#F6AE2D", "#F4A261", "#E76F51", "#E63946"];
 
@@ -32,12 +32,12 @@ export default function ReviewsChart({ ratings }) {
             tickLine={false}
           />
           <Tooltip
-            formatter={(value) => [
+            formatter={(value, name, props) => [
               `${value.toLocaleString()} reviews`,
-              "Review Count",
+              `${props.payload.star} Stars`,
             ]}
           />
-          <Bar dataKey="count" radius={[8, 8, 8, 8]}>
+          <Bar dataKey="count" radius={8}>
             {data.map((entry, index) => (
               <Cell key={index} fill={colors[index % colors.length]} />
             ))}
