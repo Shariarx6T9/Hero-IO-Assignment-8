@@ -52,7 +52,6 @@ export default function MyInstallation() {
           alignItems: "center",
         }}
       >
-        {/* ✅ Image now loads correctly from public folder */}
         <img
           src="/assets/error-404.png"
           alt="No apps installed"
@@ -66,10 +65,11 @@ export default function MyInstallation() {
           You have not installed any apps yet.
         </p>
 
-        {/* ✅ Changed button color to purple */}
+        
         <button
-          onClick={() => navigate("/")}
-          className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all"
+          onClick={() => navigate("/apps")}
+          style={{ marginTop: "40px" }}
+          className="btn !bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all"
         >
           Go to App
         </button>
@@ -81,7 +81,8 @@ export default function MyInstallation() {
   return (
     <div className="px-8 py-8 bg-white">
       {/* ---- Page Header ---- */}
-      <div className="text-center mb-8">
+
+      <div className="header-center mb-12">
         <h1 className="text-3xl font-bold text-gray-800">
           Your Installed Apps
         </h1>

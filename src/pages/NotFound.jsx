@@ -25,19 +25,13 @@ export default function NotFound() {
       <p style={{ marginBottom: 24, color: "#555" }}>
         Please try searching for another app.
       </p>
-      <Link
-        to="/"
-        style={{
-          background: "#007bff",
-          color: "#fff",
-          padding: "10px 18px",
-          borderRadius: "8px",
-          textDecoration: "none",
-          fontWeight: "500",
-        }}
-      >
-        Go Home
-      </Link>
-    </div>
+      <button
+        onClick={() => navigate("/")}
+        className="btn !bg-purple-600 !text-white hover:!bg-purple-700 transition-colors"
+>
+       Go Home
+      </button>
+
+     </div>
   );
 }
