@@ -10,26 +10,25 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <>
-      <Header />
+    <Routes>
+      <Route
+        element={
+          <>
+            <Header />
+            <main className="min-h-[75vh] py-8 bg-gray-50">
+              <Outlet />
+            </main>
+            <Footer />
+          </>
+        }
+      >
+        <Route path="/" element={<Home />} />
+        <Route path="/apps" element={<AllApps />} />
+        <Route path="/apps/:id" element={<AppDetails />} />
+        <Route path="/installation" element={<MyInstallation />} />
+      </Route>
 
-      <main className="min-h-[75vh] py-8 bg-gray-50">
-        <Routes>
-          {/* Main routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/apps" element={<AllApps />} />
-          <Route path="/apps/:id" element={<AppDetails />} />
-          <Route path="/installation" element={<MyInstallation />} />
-
-          {/* 404 fallback */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-
-        {/* Nested content placeholder (if any future subroutes) */}
-        <Outlet />
-      </main>
-
-      <Footer />
-    </>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
