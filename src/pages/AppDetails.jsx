@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import appsData from "../data/apps.json";
 import { installApp, isInstalled } from "../utils/localStorage";
 import { toast } from "react-hot-toast";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
-
-const COLORS = ['#22c55e', '#84cc16', '#facc15', '#fb923c', '#ef4444'];
+import iconReview from "../assets/icon-review.png";
+import iconRatings from "../assets/icon-ratings.png";
+import iconDownloads from "../assets/icon-downloads.png";
+import "../index.css";
 
 export default function AppDetails() {
   const { id } = useParams();
@@ -14,76 +23,191 @@ export default function AppDetails() {
   const [installed, setInstalled] = useState(false);
 
   useEffect(() => {
-    const numericId = parseInt(id, 10);
-    const foundApp = appsData.find(a => a.id === numericId);
+    const numericId = Number(id);
+    const foundApp = appsData.find((a) => a.id === numericId);
     if (foundApp) {
       setApp(foundApp);
-      setInstalled(isInstalled(numericId));
+      setInstalled(isInstalled(numericId)); // check if already installed
     }
   }, [id]);
 
   const handleInstall = () => {
-    if (!installed) {
-      installApp(app.id);
-      setInstalled(true);
+    if (app && !installed) {
+      installApp(app.id);   // adds app to localStorage
+      setInstalled(true);   // updates UI
       toast.success(`${app.title} installed successfully!`);
     }
   };
 
+  // ✅ If app not found
   if (!app) {
     return (
-        <div className="text-center py-16">
-            <img src="/assets/App-Error.png" alt="App not found" className="mx-auto w-64"/>
-            <p className="mt-4 text-gray-600 font-semibold text-xl">OPPS!! APP NOT FOUND</p>
-            <p className="text-gray-500">The App you are requesting is not on our system.</p>
-            <Link to="/apps" className="mt-4 inline-block btn btn-primary">Go Back</Link>
-        </div>
+      <div
+        className="center"
+        style={{
+          minHeight: "70vh",
+          flexDirection: "column",
+          textAlign: "center",
+          gap: "1rem",
+        }}
+      >
+        <h2>The App you are requesting is not found on our system.</h2>
+        <button
+          onClick={() => navigate("/")}
+          className="btn"
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          Go Home
+        </button>
+      </div>
     );
   }
-  
-  const chartData = app.ratings.slice().reverse(); // To show 5 stars at the top
+
+  const chartData = [
+    { name: "5 star", value: 11500 },
+    { name: "4 star", value: 6500 },
+    { name: "3 star", value: 4000 },
+    { name: "2 star", value: 2200 },
+    { name: "1 star", value: 900 },
+  ];
 
   return (
-    <div className="container">
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-1 flex justify-center">
-            <img src={app.image} alt={app.title} className="w-full max-w-xs rounded-2xl shadow-lg object-cover" />
-        </div>
-        <div className="md:col-span-2">
-            <h1 className="text-4xl font-bold">{app.title}</h1>
-            <p className="text-lg text-gray-500 mb-4">{app.companyName}</p>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-700 mb-6">
-                <span>⭐ <strong>{app.ratingAvg}</strong> Average Ratings</span>
-                <span><strong>{app.downloads.toLocaleString()}</strong> Downloads</span>
-                <span><strong>{app.reviews.toLocaleString()}</strong> Total Reviews</span>
-            </div>
-            <button onClick={handleInstall} disabled={installed} className={`px-8 py-3 rounded-lg font-bold text-white ${installed ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}>
-                {installed ? "Installed" : `Install Now (${app.size} MB)`}
-            </button>
-            
-            <div className="mt-10">
-                <h3 className="text-2xl font-bold mb-4">Description</h3>
-                <p className="text-gray-600 leading-relaxed">{app.description}</p>
+    <div className="app-details" style={{ padding: "60px 20px" }}>
+      {/* ===== Header Section ===== */}
+      <div
+        className="details-header"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "24px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={app.image}
+          alt={app.title}
+          className="app-image"
+          style={{
+            width: "140px",
+            height: "140px",
+            borderRadius: "20px",
+            objectFit: "cover",
+          }}
+        />
+
+        <div className="details-info" style={{ maxWidth: "600px" }}>
+          <h2 style={{ marginBottom: "8px", fontSize: "28px" }}>{app.title}</h2>
+          <p style={{ marginBottom: "16px", color: "#6b7280" }}>
+            Developed by{" "}
+            <span className="dev-name" style={{ color: "#0b61ff" }}>
+              {app.companyName}
+            </span>
+          </p>
+
+          <div
+            className="stats-row"
+            style={{
+              display: "flex",
+              gap: "24px",
+              flexWrap: "wrap",
+              marginBottom: "20px",
+            }}
+          >
+            <div
+              className="stat-item"
+              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+            >
+              <img src={iconDownloads} alt="downloads" width="28" height="28" />
+              <div>
+                <p style={{ fontSize: "13px", color: "#6b7280" }}>Downloads</p>
+                <h3>{app.downloads.toLocaleString()}</h3>
+              </div>
             </div>
 
-            <div className="mt-10">
-                <h3 className="text-2xl font-bold mb-4">Ratings</h3>
-                <div style={{ width: '100%', height: 200 }}>
-                    <ResponsiveContainer>
-                        <BarChart layout="vertical" data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                            <XAxis type="number" hide />
-                            <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} />
-                            <Tooltip />
-                            <Bar dataKey="count" barSize={20} radius={[10, 10, 10, 10]}>
-                               {chartData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
+            <div
+              className="stat-item"
+              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+            >
+              <img src={iconRatings} alt="ratings" width="28" height="28" />
+              <div>
+                <p style={{ fontSize: "13px", color: "#6b7280" }}>Average Rating</p>
+                <h3>{app.ratingAvg}</h3>
+              </div>
             </div>
+
+            <div
+              className="stat-item"
+              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+            >
+              <img src={iconReview} alt="review" width="28" height="28" />
+              <div>
+                <p style={{ fontSize: "13px", color: "#6b7280" }}>Total Reviews</p>
+                <h3>{app.reviews.toLocaleString()}</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== Install Button ===== */}
+          <button
+            onClick={handleInstall}
+            disabled={installed}
+            className={`btn install-btn`}
+            style={{
+              padding: "12px 24px",
+              borderRadius: "10px",
+              fontWeight: "bold",
+              color: "white",
+              backgroundColor: installed ? "#9ca3af" : "#22c55e",
+              cursor: installed ? "not-allowed" : "pointer",
+            }}
+          >
+            {installed ? "Installed" : `Install Now (${app.size} MB)`}
+          </button>
         </div>
+      </div>
+
+      {/* ===== Ratings Chart Section ===== */}
+      <div
+        className="ratings-section"
+        style={{ marginTop: "50px", textAlign: "center" }}
+      >
+        <h3 style={{ marginBottom: "20px", fontSize: "22px" }}>Ratings</h3>
+        <ResponsiveContainer width="100%" height={200}>
+          <BarChart
+            data={chartData}
+            layout="vertical"
+            margin={{ top: 20, right: 40, left: 0, bottom: 0 }}
+          >
+            <XAxis
+              type="number"
+              domain={[0, Math.max(...chartData.map((d) => d.value))]}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} />
+            <Tooltip cursor={{ fill: "transparent" }} />
+            <Bar dataKey="value" fill="#ff8c00" radius={[5, 5, 5, 5]} barSize={20} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* ===== Description Section ===== */}
+      <div
+        className="description-section"
+        style={{
+          marginTop: "60px",
+          maxWidth: "800px",
+          marginInline: "auto",
+          background: "var(--card)",
+          padding: "24px",
+          borderRadius: "16px",
+          boxShadow: "var(--soft-shadow)",
+          textAlign: "left",
+        }}
+      >
+        <h3 style={{ marginBottom: "12px", fontSize: "22px" }}>Description</h3>
+        <p style={{ color: "#4b5563", lineHeight: 1.6 }}>{app.description}</p>
       </div>
     </div>
   );

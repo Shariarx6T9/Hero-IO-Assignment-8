@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
 export default function NotFound() {
   return (
     <div
-        style={{
-          padding: "60px 20px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: "20px",
+      }}
     >
       <img
         src="/assets/App-Error.png"
