@@ -1,9 +1,7 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import Home from "./pages/Home";
 import AllApps from "./pages/AllApps";
 import AppDetails from "./pages/AppDetails";
@@ -13,12 +11,11 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <Routes>
-      {/* Normal pages layout */}
       <Route
         element={
           <>
             <Header />
-            <main className="min-h-[72vh] py-6">
+            <main className="min-h-[75vh] py-8 bg-gray-50">
               <Outlet />
             </main>
             <Footer />
@@ -31,7 +28,6 @@ export default function App() {
         <Route path="/installation" element={<MyInstallation />} />
       </Route>
 
-      {/* NotFound Page (outside the layout) */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

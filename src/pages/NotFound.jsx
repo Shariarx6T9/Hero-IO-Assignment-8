@@ -2,33 +2,43 @@ export default function NotFound() {
   return (
     <div
       style={{
-        height: "100vh",
+        width: "100%",
+        minHeight: "100vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        padding: "20px",
+        justifyContent: "center",  // Horizontal center
+        alignItems: "center",      // Vertical center
+        padding: "20px",           // Padding for small screens
+        boxSizing: "border-box",
       }}
     >
-      <img
+      <div
+        style={{
+          maxWidth: "600px",
+          textAlign: "center",     // Center text
+        }}
+      >
+        <img
         src="/assets/App-Error.png"
-        alt="App Not Found"
-        style={{ maxWidth: 320, marginBottom: 24 }}
-      />
-      <h2 style={{ marginBottom: 12 }}>
-        The App you are requesting is not found on our system.
-      </h2>
-      <p style={{ marginBottom: 24, color: "#555" }}>
-        Please try searching for another app.
-      </p>
-      <button
-        onClick={() => navigate("/")}
-        className="btn !bg-purple-600 !text-white hover:!bg-purple-700 transition-colors"
->
-       Go Home
-      </button>
-
-     </div>
+          alt="Not Found"
+          style={{ width: "100%", maxWidth: "350px", marginBottom: "20px" }}
+        />
+        <h1>The App you are requesting is not found on our system.</h1>
+        <p>Please try searching for another app.</p>
+        <button
+          style={{
+            background: "var(--primary)",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            padding: "10px 20px",
+            cursor: "pointer",
+            marginTop: "20px",
+          }}
+          onClick={() => (window.location.href = "/")}
+        >
+          Go Home
+        </button>
+      </div>
+    </div>
   );
 }
