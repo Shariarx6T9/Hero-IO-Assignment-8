@@ -31,12 +31,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* State Cards */}
-      <div className="states">
+   {/* State Cards */}
+      {/*<div className="states">
         <StateCard title="Popular" className="green">Top downloaded this week</StateCard>
         <StateCard title="New" className="orange">Recently added apps</StateCard>
         <StateCard title="Top Rated" className="blue">Highest user ratings</StateCard>
-      </div>
+      </div>*/}
 
       {/* Top Apps Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 32 }}>
