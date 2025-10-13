@@ -30,7 +30,6 @@ export default function App() {
         <Route path="/installation" element={<MyInstallation />} />
       </Route>
 
-      {/* This is the important change! */}
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
