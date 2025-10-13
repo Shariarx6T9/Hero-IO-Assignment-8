@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header";
@@ -6,7 +7,8 @@ import Home from "./pages/Home";
 import AllApps from "./pages/AllApps";
 import AppDetails from "./pages/AppDetails";
 import MyInstallation from "./pages/MyInstallation";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound"; // This is for search results
+import PageNotFound from "./pages/PageNotFound"; // Import the new component
 
 export default function App() {
   return (
@@ -28,7 +30,8 @@ export default function App() {
         <Route path="/installation" element={<MyInstallation />} />
       </Route>
 
-      <Route path="*" element={<NotFound />} />
+      {/* This is the important change! */}
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }

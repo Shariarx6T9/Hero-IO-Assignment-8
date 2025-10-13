@@ -67,14 +67,6 @@ export default function InstalledApps() {
           alignItems: "center",
         }}
       >
-        <img
-          src="/assets/error-404.png"
-          alt="No apps installed"
-          className="w-64 mb-4"
-          onError={(e) => {
-            e.target.style.display = "none";
-          }}
-        />
         <h2 className="text-xl font-semibold mb-2">No Apps Installed</h2>
         <p className="text-gray-500 mb-4">
           You have not installed any apps yet.
@@ -181,9 +173,11 @@ export default function InstalledApps() {
                   }}
                 >
                   <div className="flex items-center gap-1 font-semibold">
-    <span className="text-yellow-500 text-base">⭐</span>
-    <span className="font-bold text-black">{app.ratingAvg}</span>
-  </div>
+                    <span className="text-yellow-500 text-base">⭐</span>
+                    <span className="font-bold text-black">
+                      {app.ratingAvg}
+                    </span>
+                  </div>
                   <span>⬇️ {formatDownloads(app.downloads)}</span>
                   <span>💾 {formatSize(app.size)}</span>
                 </div>
