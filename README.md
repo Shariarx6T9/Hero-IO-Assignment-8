@@ -2,7 +2,7 @@
 
 Hero IO is a responsive and interactive web application that simulates a mini app store. Built with React and Vite, it allows users to browse, install, and manage applications in a clean and modern user interface inspired by the Google Play Store. This project showcases a dynamic front-end with features like routing, state management, and local storage persistence.
 
-## 🔹 Live Demo
+## 🔹 Live Demo : https://hero-io-app-test.surge.sh
 
 [](https://hero-io-app-test.surge.sh/)
 
